@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<div align="center">
+<table border="1">
+    <thead>
+    <tr>
+        <th>Device ID</th>
+        <th>Device name</th>
+        <th>Device brand</th>
+        <th>Production</th>
+        <th>price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="device : ${allDevices}">
+        <td th:text="${device.id}">Device ID</td>
+        <td th:text="${device.deviceName}">Device Name</td>
+        <td th:text="${device.brandName}">Device Brand</td>
+        <td th:text="${device.productionPlace}">Production</td>
+        <td th:text="${device.price}">Price</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
