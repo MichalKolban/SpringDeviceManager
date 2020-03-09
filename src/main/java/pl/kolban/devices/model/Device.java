@@ -61,4 +61,15 @@ public class Device {
     public void setPrice(Float price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "id=" + id +
+                ", deviceName='" + deviceName + '\'' +
+                ", brandName='" + brandName + '\'' +
+                ", productionPlace='" + productionPlace + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

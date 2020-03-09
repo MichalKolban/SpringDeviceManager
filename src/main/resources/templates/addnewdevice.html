@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<div align="center">
+
+    <form action="#" th:action="@{/save}" th:object="${device}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Product Name:</td>
+                <td><input type="text" required="required" th:field="*{deviceName}" /></td>
+            </tr>
+            <tr>
+                <td>Brand:</td>
+                <td><input type="text" required="required" th:field="*{brandName}" /></td>
+            </tr>
+            <tr>
+                <td>Made in:</td>
+                <td><input type="text" required="required" th:field="*{productionPlace}" /></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="number" step="0.01" required="required"   th:field="*{price}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+
+
+
+    </form>
+
+
+</div>
+
+
+</body>
+</html>

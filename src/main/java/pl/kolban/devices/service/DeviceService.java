@@ -22,6 +22,16 @@ public class DeviceService {
         return allDevices;
     }
 
+    public Device getDeviceById(Long id){
+        Device deviceDB = deviceRepository.getDeviceById(id);
+        return deviceDB;
+    }
+
+
+    public void saveEditedDevice(Device device){
+        deviceRepository.save(device);
+    }
+
     public void addDevice(Device device){
 
         // validate params
@@ -30,9 +40,6 @@ public class DeviceService {
     }
 
     public void deleteDeviceById(Long id){
-
-        // check if id exists
-
         deviceRepository.deleteById(id);
     }
 
@@ -43,6 +50,7 @@ public class DeviceService {
         Device device = deviceRepository.getDeviceByDeviceName(name);
         deviceRepository.delete(device);
     }
+
 
 
 

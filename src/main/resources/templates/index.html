@@ -5,7 +5,12 @@
     <title>Home Page</title>
 </head>
 <body>
-<div align="center">
+<div class="first" align="center">
+    <a th:href="@{/addnewdevice/}"> Add new</a>
+
+</div>
+
+<div class="first" align="center">
 <table border="1">
     <thead>
     <tr>
@@ -13,7 +18,7 @@
         <th>Device name</th>
         <th>Device brand</th>
         <th>Production</th>
-        <th>price</th>
+        <th>Price</th>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +28,12 @@
         <td th:text="${device.brandName}">Device Brand</td>
         <td th:text="${device.productionPlace}">Production</td>
         <td th:text="${device.price}">Price</td>
+        <td>
+            <a th:href="@{'/edit/' + ${device.id}}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{'/delete/' + ${device.id}}">Delete</a>
+        </td>
     </tr>
     </tbody>
 </table>
