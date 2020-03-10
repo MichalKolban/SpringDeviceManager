@@ -33,9 +33,7 @@ public class DeviceService {
     }
 
     public void addDevice(Device device){
-
         // validate params
-
         deviceRepository.save(device);
     }
 
@@ -44,9 +42,7 @@ public class DeviceService {
     }
 
     public void deleteDeviceByName(String name){
-
         // check if device exists
-
         Device device = deviceRepository.getDeviceByDeviceName(name);
         deviceRepository.delete(device);
     }

@@ -1,9 +1,8 @@
-package pl.kolban.devices;
+package pl.kolban.devices.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pl.kolban.devices.repository.DeviceRepository;
-import pl.kolban.devices.service.DeviceService;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class Utils {
     DeviceRepository deviceRepository;
 
     @Autowired
-    public Utils(DeviceService deviceService, DeviceRepository deviceRepository) {
+    public Utils(DeviceRepository deviceRepository) {
         this.deviceRepository = deviceRepository;
     }
 

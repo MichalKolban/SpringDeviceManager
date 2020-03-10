@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="first" align="center">
-    <a th:href="@{/addnewdevice/}"> Add new</a>
+<div class="hed" align="center">
+
+    <img src="/image/devices.svg" width="200">
+
+    <form th:action="@{/addnewdevice/}">
+        <input class="button" type="submit" value="Add new Device"/>
+    </form>
 
 </div>
 
 <div class="first" align="center">
-<table border="1">
-    <thead>
-    <tr>
-        <th>Device ID</th>
-        <th>Device name</th>
-        <th>Device brand</th>
-        <th>Production</th>
-        <th>Price</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="device : ${allDevices}">
-        <td th:text="${device.id}">Device ID</td>
-        <td th:text="${device.deviceName}">Device Name</td>
-        <td th:text="${device.brandName}">Device Brand</td>
-        <td th:text="${device.productionPlace}">Production</td>
-        <td th:text="${device.price}">Price</td>
-        <td>
-            <a th:href="@{'/edit/' + ${device.id}}">Edit</a>
-        </td>
-        <td>
-            <a th:href="@{'/delete/' + ${device.id}}">Delete</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Device ID</th>
+            <th>Device name</th>
+            <th>Device brand</th>
+            <th>Production</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="device : ${allDevices}">
+            <td th:text="${device.id}">Device ID</td>
+            <td th:text="${device.deviceName}">Device Name</td>
+            <td th:text="${device.brandName}">Device Brand</td>
+            <td th:text="${device.productionPlace}">Production</td>
+            <td th:text="${device.price}">Price</td>
+            <td>
+                <a class="link" th:href="@{'/edit/' + ${device.id}}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{'/delete/' + ${device.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

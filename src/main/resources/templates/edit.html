@@ -2,12 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit</title>
+    <title>Edit Device</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
 <div align="center">
+
+    <img src="/image/devices.svg" width="200">
 
     <form action="#" th:action="@{/save}" th:object="${device}"
           method="post">
@@ -38,8 +41,9 @@
                 <td><input type="number" step="0.01" required="required"  th:field="*{price}" /></td>
             </tr>
             <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
+                <td colspan="2"><button class="button" type="submit">Save</button> </td>
             </tr>
+
         </table>
     </form>
 

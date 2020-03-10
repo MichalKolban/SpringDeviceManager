@@ -2,12 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Add new Device</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
 <div align="center">
+
+    <img src="/image/devices.svg" width="200">
 
     <form action="#" th:action="@{/save}" th:object="${device}" method="post">
         <table border="0" cellpadding="10">
@@ -20,7 +23,7 @@
                 <td><input type="text" required="required" th:field="*{brandName}" /></td>
             </tr>
             <tr>
-                <td>Made in:</td>
+                <td>Production:</td>
                 <td><input type="text" required="required" th:field="*{productionPlace}" /></td>
             </tr>
             <tr>
