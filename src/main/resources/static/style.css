@@ -3,6 +3,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
+    text-align: center;
+
 }
 
 .hello {
@@ -10,22 +12,63 @@ body {
     font-size: 18px;
 }
 
+table, td, th {
+    border: 1px solid black;
+
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td {
+    padding: 10px 0px;
+}
+
 .hed {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     padding: 50px;
     text-decoration: none;
+    display: inline-block;
 }
 
+th {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.79);
+    color: white;
+    padding: 3px;
+}
 
-.link {
-    background-color: coral;
+.first {
+    text-decoration: none;
+    text-align: center;
+}
+
+.editlink {
+     background-color: #fe9715;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: bold;
+     color: white;
+     padding: 5px 5px;
+ }
+
+.deletelink {
+    background-color: #ff3e52;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    padding: 5px 5px;
 }
 
 .button {
     display: block;
     color: white;
-    background: #009688;
+    background: rgba(0, 0, 0, 0.79);
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -36,3 +79,7 @@ body {
     cursor: pointer;
 }
 
+.editclass {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ff3e52;
+}

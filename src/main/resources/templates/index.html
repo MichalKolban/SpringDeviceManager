@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="hed" align="center">
+<div class="hed">
 
     <img src="/image/devices.svg" width="200">
 
@@ -16,8 +16,8 @@
 
 </div>
 
-<div class="first" align="center">
-    <table border="1">
+<div class="first">
+    <table align="center">
         <thead>
         <tr>
             <th>Device ID</th>
@@ -25,6 +25,8 @@
             <th>Device brand</th>
             <th>Production</th>
             <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -35,10 +37,10 @@
             <td th:text="${device.productionPlace}">Production</td>
             <td th:text="${device.price}">Price</td>
             <td>
-                <a class="link" th:href="@{'/edit/' + ${device.id}}">Edit</a>
+                <a class="editlink" th:href="@{'/edit/' + ${device.id}}">Edit</a>
             </td>
             <td>
-                <a th:href="@{'/delete/' + ${device.id}}">Delete</a>
+                <a class="deletelink" th:href="@{'/delete/' + ${device.id}}">Delete</a>
             </td>
         </tr>
         </tbody>

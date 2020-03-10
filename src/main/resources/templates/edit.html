@@ -5,14 +5,14 @@
     <title>Edit Device</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="editclass">
 
 
-<div align="center">
+<div class="editclass" align="center">
 
     <img src="/image/devices.svg" width="200">
 
-    <form action="#" th:action="@{/save}" th:object="${device}"
+    <form class="button" action="#" th:action="@{/save}" th:object="${device}"
           method="post">
 
         <table border="0" cellpadding="10">
