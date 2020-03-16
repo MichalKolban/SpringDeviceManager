@@ -27,13 +27,7 @@ public class DeviceService {
         return deviceDB;
     }
 
-
-    public void saveEditedDevice(Device device){
-        deviceRepository.save(device);
-    }
-
-    public void addDevice(Device device){
-        // validate params
+    public void saveDevice(Device device){
         deviceRepository.save(device);
     }
 
@@ -41,11 +35,6 @@ public class DeviceService {
         deviceRepository.deleteById(id);
     }
 
-    public void deleteDeviceByName(String name){
-        // check if device exists
-        Device device = deviceRepository.getDeviceByDeviceName(name);
-        deviceRepository.delete(device);
-    }
 
 
 

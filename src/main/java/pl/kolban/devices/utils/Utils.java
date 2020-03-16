@@ -26,4 +26,14 @@ public class Utils {
         return false;
     }
 
+    public Boolean ifBrandExists(String brandName) {
+        for (CompanyNameEnum company : CompanyNameEnum.values()) {
+            if(brandName.equalsIgnoreCase(String.valueOf(company))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }

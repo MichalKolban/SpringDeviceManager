@@ -37,7 +37,6 @@ public class DeviceController {
     @RequestMapping("/addnewdevice")
     public String addNewDevice(Model model){
         Device newDevice = new Device();
-
         model.addAttribute("device", newDevice);
         return "addnewdevice";
 
@@ -54,11 +53,14 @@ public class DeviceController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(@ModelAttribute("device") Device device){
+
         Boolean deviceNameExists = utils.ifDeviceExists(device.getDeviceName());
-        if(!deviceNameExists) {
-            service.saveEditedDevice(device);
+        Boolean brandExists = utils.ifBrandExists(device.getBrandName());
+        if(!deviceNameExists && brandExists) {
+            service.saveDevice(device);
             return "redirect:/";
         } else {
+            System.out.println("Device name exists : " + device.getDeviceName() + " or brand doesn't exists " + device.getBrandName());
             return "redirect:/";
         }
     }
