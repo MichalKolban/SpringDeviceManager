@@ -45,7 +45,6 @@ public class DeviceController {
     @RequestMapping("/edit/{id}")
     public ModelAndView editForm(@PathVariable(name = "id") Long id){
         ModelAndView modelAndView = new ModelAndView("edit");
-
         Device device = service.getDeviceById(id);
         modelAndView.addObject("device", device);
         return modelAndView;
@@ -53,21 +52,34 @@ public class DeviceController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(@ModelAttribute("device") Device device){
-
-        Boolean deviceNameExists = utils.ifDeviceExists(device.getDeviceName());
-        Boolean brandExists = utils.ifBrandExists(device.getBrandName());
-        if(!deviceNameExists && brandExists) {
+//        Boolean deviceNameExists = utils.ifDeviceExists(device.getDeviceName());
+//        Boolean brandExists = utils.ifBrandExists(device.getBrandName());
+//        if(!deviceNameExists && brandExists) {
             service.saveDevice(device);
             return "redirect:/";
-        } else {
-            System.out.println("Device name exists : " + device.getDeviceName() + " or brand doesn't exists " + device.getBrandName());
-            return "redirect:/";
-        }
+//        } else {
+//            System.out.println("Device name exists : " + device.getDeviceName() + " or brand doesn't exists " + device.getBrandName());
+//            return "redirect:/";
+//        }
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String updateDevice(@ModelAttribute("device") Device device){
+        service.updateDevice(device);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "delete/{id}")
     public String deleteDevice(@PathVariable Long id){
         service.deleteDeviceById(id);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/reset")
+    public String resetAll(){
+        service.deleteAll();
+        service.reset();
+        service.addNewDevicesToDB();
         return "redirect:/";
     }
 

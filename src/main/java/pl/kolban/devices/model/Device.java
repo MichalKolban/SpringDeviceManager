@@ -22,8 +22,20 @@ public class Device {
     public Device() {
     }
 
+    public Device(Long id, String deviceName, String brandName, String productionPlace, Float price ){
+        this.id = id;
+        this.deviceName = deviceName;
+        this.brandName = brandName;
+        this.productionPlace = productionPlace;
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDeviceName() {
