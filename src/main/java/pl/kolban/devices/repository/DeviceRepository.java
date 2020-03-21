@@ -14,8 +14,6 @@ import java.util.List;
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
 
-        Device getDeviceByDeviceName(String name);
-
         Device getDeviceById(Long id);
 
         @Query(value = DEVICE_NAMES, nativeQuery = true)
@@ -37,4 +35,14 @@ public interface DeviceRepository extends JpaRepository<Device, Long> {
                 " WHERE d.device_id = :id ";
 
         String RESET_DB = " ALTER TABLE devices AUTO_INCREMENT = 1 ";
+
+
+
+        // Postgresql Setup
+
+//        String UPDATE_DEVICE = " UPDATE devices SET device_name = :deviceName, brand_name = :brandName, production = :production, price = :price" +
+//                " WHERE device_id = :id ";
+
+//        String RESET_DB = " TRUNCATE TABLE devices RESTART IDENTITY; ";
+
 }
