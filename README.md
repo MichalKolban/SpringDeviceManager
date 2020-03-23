@@ -9,6 +9,28 @@
 
 ###### (still maitaining some problems e.g. double click protection, wrong table view after editing - only on heroku)
 
+#### How to run on local machine :
+
+Clone/ Download project
+Open cmd inside project folder
+
+`mvn intall`
+
+go to 'target' folder or cmd
+
+`cd target`
+
+run app
+
+`java -jar devices-0.0.1-SNAPSHOT.jar`
+
+go to :
+
+`http://localhost:8080/`
+
+
+
+
 ##### Actions :
 
 - Add new device
